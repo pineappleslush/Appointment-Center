@@ -1,0 +1,37 @@
+<td>
+    <div
+        contenteditable="true"
+        (blur)="updateValue(appointment.id, 'date', $event)"
+    >
+        {{ appointment.date }}
+    </div>
+</td>
+<td>
+    <div
+        contenteditable="true"
+        (blur)="updateValue(appointment.id, 'time', $event)"
+    >
+        {{ appointment.time }}
+    </div>
+</td>
+<td>
+    <div
+        contenteditable="true"
+        (blur)="updateValue(appointment.id, 'location', $event)"
+    >
+        {{ appointment.location }}
+    </div>
+</td>
+<td>
+    <div
+        contenteditable="true"
+        (blur)="updateValue(appointment.id, 'description', $event)"
+    >
+        {{ appointment.description }}
+    </div>
+</td>
+<td>
+    <button (click)="deleteAppointment(appointment)">
+        <i class="fa fa-trash"></i>
+    </button>
+</td>

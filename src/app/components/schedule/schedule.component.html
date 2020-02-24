@@ -1,0 +1,36 @@
+<div class="appt-header">
+    <h1>
+        My Appointments
+
+        <div>{{ appointments.length }}</div>
+
+        <button (click)="toggleApptForm()">
+            <i class="fa fa-calendar-plus-o"></i>
+        </button>
+    </h1>
+</div>
+
+<appointment-form
+    *ngIf="showApptForm"
+    (toggleForm)="onToggleApptForm()"
+></appointment-form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+            <th scope="col">Location</th>
+            <th scope="col">Description</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr
+            *ngFor="let appointment of appointments"
+            [appointment]="appointment"
+            (deleted)="onDeleted($event)"
+        ></tr>
+    </tbody>
+</table>
